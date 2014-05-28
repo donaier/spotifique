@@ -7,6 +7,8 @@
     %title= current_page.data.title || "spotifique ♫"
     
     = stylesheet_link_tag "app"
+
+    = javascript_include_tag "/mopidy/mopidy.min.js"
     = javascript_include_tag  "app"
   
   %body{ class: page_classes }

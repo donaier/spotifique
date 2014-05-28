@@ -12,13 +12,9 @@
             %span
 
       %aside.left-off-canvas-menu
-        %ul.off-canvas-list
-          %li= link_to 'search', '#'
-          %li= link_to 'and', '#'
-          %li= link_to 'here', '#'
-          %li= link_to 'will', '#'
-          %li= link_to 'be', '#'
-          %li= link_to 'playlists', '#'
+        %form
+          %input{ type: "text", placeholder: "search" }
+        %ul.off-canvas-list#playlistslist
 
       %aside.right-off-canvas-menu
         %ul.off-canvas-list
