@@ -37,7 +37,6 @@ $ ->
         tmp += child
       i++
 
-    # Move Spotify "Starred" playlist to top as this is the way Spotify does it
     tmp = starred + tmp  if starred
     # $("#playlistslist").empty()
     $("#playlistslist").html tmp
