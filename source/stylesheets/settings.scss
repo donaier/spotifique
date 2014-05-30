@@ -14,6 +14,16 @@
 
 // $experimental: true;
 
+// We use these as default colors throughout
+$bright: #DEDEDE;
+$dark: #151515;
+$primary-color: #DE0000;
+$secondary-color: #411;
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+// $warning-color: #f08a24;
+// $info-color: #a0d3e8;
+
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 
@@ -26,13 +36,13 @@
 // $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-// $include-html-classes: true;
+$include-html-classes: false;
 // $include-print-styles: true;
-// $include-html-global-classes: $include-html-classes;
+$include-html-global-classes: true;
 
 // Grid
 
-// $include-html-grid-classes: $include-html-classes;
+$include-html-grid-classes: true;
 // $include-xl-html-grid-classes: false;
 
 // $row-width: rem-calc(1000);
@@ -41,10 +51,11 @@
 // Global
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: $font-weight-normal;
+$body-bg: $secondary-color;
+$body-font-color: $bright;
+$font-weight-normal: 300;
+$body-font-family: "Muli", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -54,14 +65,6 @@
 // $text-direction: ltr;
 // $opposite-direction: right;
 // $default-float: left;
-
-// We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -117,13 +120,13 @@
 // TYPOGRAPHY
 //
 
-// $include-html-type-classes: $include-html-classes;
+$include-html-type-classes: true;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
+$header-font-weight: 400;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: $body-font-color;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -226,7 +229,7 @@
 
 // Accordion
 
-// $include-html-accordion-classes: $include-html-classes;
+$include-html-accordion-classes: true;
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: #efefef  ;
@@ -328,7 +331,7 @@
 // BUTTONS
 //
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;
 
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
@@ -369,7 +372,7 @@
 
 // Button Groups
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
 // $button-bar-margin-opposite: rem-calc(10);
@@ -377,7 +380,7 @@
 
 // Clearing
 
-// $include-html-clearing-classes: $include-html-classes;
+$include-html-clearing-classes: true;
 
 // We use these to set the background colors for parts of Clearing.
 // $clearing-bg: #333;
@@ -406,7 +409,7 @@
 
 // Dropdown
 
-// $include-html-dropdown-classes: $include-html-classes;
+$include-html-dropdown-classes: true;
 
 // We use these to controls height and width styles.
 // $f-dropdown-max-width: 200px;
@@ -452,7 +455,7 @@
 
 // Dropdown Buttons
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;
 
 // We use these to set the color of the pip in dropdown buttons
 // $dropdown-button-pip-color: #fff;
@@ -501,7 +504,7 @@
 
 // Forms
 
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: true;
 
 // We use this to set the base for lots of form spacing and positioning styles
 // $form-spacing: rem-calc(16);
@@ -644,7 +647,7 @@
 
 // Labels
 
-// $include-html-label-classes: $include-html-classes;
+$include-html-label-classes: true;
 
 // We use these to style the labels
 // $label-padding: rem-calc(4 8 6);
@@ -666,12 +669,12 @@
 
 // Off-canvas
 
-// $include-html-off-canvas-classes: $include-html-classes;
+$include-html-off-canvas-classes: true;
 
-// $tabbar-bg: #333;
+$tabbar-bg: $dark;
 // $tabbar-height: rem-calc(45);
 // $tabbar-line-height: $tabbar-height;
-// $tabbar-color: #fff;
+$tabbar-color: $body-font-color;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
@@ -679,14 +682,14 @@
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
 
 // Off Canvas Tab Bar Headers
-// $tabbar-header-color: #fff;
+$tabbar-header-color: $body-font-color;
 // $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);
-// $off-canvas-bg: #333;
+$off-canvas-bg: #151515;
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: 0.3rem rem-calc(15);
@@ -698,11 +701,11 @@
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba(#fff, 0.7);
-// $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
+$off-canvas-link-color: $bright;
+$off-canvas-link-border-bottom: 1px solid $secondary-color;
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #fff;
+$tabbar-menu-icon-color: $primary-color;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -721,8 +724,8 @@
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
 // $off-canvas-overlay-box-shadow: -4px 0 4px rgba(#000, 0.5), 4px 0 4px rgba(#000, 0.5);
-// $off-canvas-overlay-background: rgba(#fff, 0.2);
-// $off-canvas-overlay-background-hover: rgba(#fff, 0.05);
+$off-canvas-overlay-background: rgba($dark, 0.7);
+$off-canvas-overlay-background-hover: rgba($dark, 0.05);
 
 // Transition Variables
 // $menu-slide: "transform 500ms ease";
@@ -970,7 +973,7 @@
 
 // Split Buttons
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;
 
 // We use these to control different shared styles for Split Buttons
 // $split-button-function-factor: 10%;
@@ -1008,7 +1011,7 @@
 
 // Sub Nav
 
-// $include-html-nav-classes: $include-html-classes;
+$include-html-nav-classes: true;
 
 // We use these to control margin and padding
 // $sub-nav-list-margin: rem-calc(-4 0 18);
@@ -1040,7 +1043,7 @@
 // SWITCH
 //
 
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: true;
 
 // Controlling border styles and background colors for the switch container
 // $switch-border-color: scale-color(#fff, $lightness: -20%);
@@ -1174,7 +1177,7 @@
 // TOP BAR
 //
 
-// $include-html-top-bar-classes: $include-html-classes;
+$include-html-top-bar-classes: true;
 
 // Background color for the top bar
 // $topbar-bg-color: #333;
@@ -1250,7 +1253,7 @@
 // VISIBILITY CLASSES
 //
 
-// $include-html-visibility-classes: $include-html-classes;
+$include-html-visibility-classes: true;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
 
