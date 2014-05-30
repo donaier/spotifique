@@ -17,6 +17,9 @@ $ ->
   trackDesc = (track) ->
     track.name + " by " + track.artists[0].name + " from " + track.album.name
 
+  # lil functions
+  stripUserId = (name) ->
+    name.split(RegExp(" by "))[0]
 
   # PLAYLIST SETUP
   setupPlaylists = (resultArr) ->
@@ -33,7 +36,7 @@ $ ->
       if starredRegex.test(resultArr[i].uri)
         starred = "<li><a href=\"#\" id=\"" + resultArr[i].uri + "\"\">&#9733; Starred Tracks</a></li>"
       else
-        child = "<li><a href=\"#\" id=\"" + resultArr[i].uri + "\"\">" + resultArr[i].name.split(RegExp(" by "))[0] + "</a></li>"
+        child = "<li><a href=\"#\" id=\"" + resultArr[i].uri + "\"\">" + stripUserId(resultArr[i].name) + "</a></li>"
         tmp += child
       i++
 
@@ -52,20 +55,29 @@ $ ->
     .then (plist) -> printPlaylistTracks(plist, console.error)
 
   printPlaylistInfo = (plist) ->
-    console.log plist.name
+    plist_image = "<div class='row'><div class='columns small-4 large-2'><img src='/images/placeholder_square.png' /></div>"
+    plist_info  = "<div class='columns small-8 large-10'><h5>♫ " + stripUserId(plist.name) + "</h5><p>" + plist.tracks.length + " Tracks</p></div></div>"
+
+    $("#playlist-info").html(plist_image + plist_info)
     plist
 
   printPlaylistTracks = (plist) ->
-    # console.log plist.tracks.length # ok
-    # console.log plist.tracks[0] # ok
+    tracks_open    = "<div class='row'><div class='columns'><table id='tracktable'><thead><tr><th colspan='3'>Tracks</th><th class='actions'><a class='tracklist-playbutton button tiny round' href='#'></a></th></tr></thead><tbody>"
+    tracks_close   = "</tbody></table></div></div>"
+    tracks_actions = "<a class='tracklist-playbutton button tiny round' href='#'></a><a class='tracklist-contextbutton button tiny round' href='#'></a>"
+    tracks_rows    = ""
 
-    # x = 0
-    # while x < plist.tracks.length
-    #   console.log plist.tracks[x]
-    #   x++
+    x = 0
+    while x < plist.tracks.length
+      tracks_rows += "<tr><td>" + (x+1) + ".</td><td>" + plist.tracks[x].name + "</td><td class='hide-for-small'>" + plist.tracks[x].artists[0].name + "</td><td class='actions'>" + tracks_actions + "</td></tr>"
+      x++
+
+    $("#playlist-tracks").html(tracks_open + tracks_rows + tracks_close)
 
     # console.log plist.tracks[x] for x in [0..(plist.tracks.length-1)]
-
+                
+    # console.log plist.tracks.length # ok
+    # console.log plist.tracks[0] # ok
     plist
 
   # INIT

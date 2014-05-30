@@ -27,48 +27,44 @@
         %ul.off-canvas-list
           %li
             %label system
+          / menu demo
           %li= link_to 'info', '#'
           %li= link_to 'system', '#'
           %li= link_to 'and', '#'
           %li= link_to 'stuff', '#'
 
     %article.main-section
-      #playlist
-        .row
-          .columns.small-4.large-2
-            = image_tag 'placeholder_square.png'
-          .columns.small-8.large-10
-            %h5 ♫ Playlist Name
-            %p no. Tracks
+      #playlist-info
+      #playlist-tracks
 
-        .row
-          .columns
-            %table#tracktable
-              %thead
-                %tr
-                  %th{ colspan: 3 } Tracks
-              %tbody
-                %tr
-                  %td song name
-                  %td artist
-                  %td action
-                %tr
-                  %td song name
-                  %td artist
-                  %td action
-                %tr
-                  %td song name
-                  %td artist
-                  %td action
-                %tr
-                  %td song name
-                  %td artist
-                  %td action
-                %tr
-                  %td song name
-                  %td artist
-                  %td action
+      / .playlist-demo
+      /   .row
+      /     .columns.small-4.large-2
+      /       = image_tag 'placeholder_square.png'
+      /     .columns.small-8.large-10
+      /       %h5 ♫ Playlist Name
+      /       %p no. Tracks
 
+      / #playlist-tracks
+      /   .row
+      /     .columns
+      /       %table#tracktable
+      /         %thead
+      /           %tr
+      /             %th{ colspan: 3 } Tracks
+      /             %th= link_to '', '#', class: 'tracklist-playbutton button tiny round'
+      /         %tbody
+      /           %tr
+      /             %td 1.
+      /             %td song name
+      /             %td artist
+      /             %td.actions
+      /               = link_to '', '#', class: 'tracklist-playbutton button tiny round'
+      /               = link_to '', '#', class: 'tracklist-contextbutton button tiny round'
+              
+
+
+      / demo content
       / .row
       /   .columns
       /     %h1 Heading 1
