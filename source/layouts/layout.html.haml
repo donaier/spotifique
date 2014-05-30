@@ -3,6 +3,14 @@
   %head
     %meta{ charset: "utf-8" }
     %meta{ content: "IE=edge,chrome=1", 'http-equiv' => "X-UA-Compatible" }
+    %meta{ content: "width=device-width, initial-scale=1.0", name: "viewport" }
+
+    %meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+    %meta{ name: "apple-mobile-web-app-status-bar-style", content: "black" }
+
+    %link{ href: "/images/icon_clear.png", rel: "icon", type: "image/png" }
+    %link{ href: "/images/icon.png", rel: "apple-touch-icon" }
+    %link{ rel: 'apple-touch-startup-image', media: '(max-device-width: 480px) and (-webkit-min-device-pixel-ratio : 2)', href: "/images/startup_2.png" }
     
     %title= current_page.data.title || "spotifique ♫"
     
@@ -12,7 +20,5 @@
     = javascript_include_tag  "app"
   
   %body{ class: page_classes }
-    .row
-      .columns
-        = yield
+    = yield
   

@@ -70,12 +70,12 @@ $body-font-weight: $font-weight-normal;
 // $global-radius: 3px;
 // $global-rounded: 1000px;
 
-// We use these to control inset shadow shiny edges and depressions.
+// We use these to control inset shadow shiny edges and depressions.e
 // $shiny-edge-size: 0 1px 0;
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
 
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(15);
 
 // Media Query Ranges
 // $small-range: (0em, 40em);
@@ -285,7 +285,7 @@ $include-html-accordion-classes: true;
 
 // Block Grid
 
-// $include-html-grid-classes: $include-html-classes;
+$include-html-grid-classes: true;
 // $include-xl-html-block-grid-classes: false;
 
 // We use this to control the maximum number of block grid elements per row
@@ -692,15 +692,15 @@ $tabbar-header-color: $body-font-color;
 $off-canvas-bg: #151515;
 
 // Off Canvas Menu List Variables
-// $off-canvas-label-padding: 0.3rem rem-calc(15);
-// $off-canvas-label-color: #999;
-// $off-canvas-label-text-transform: uppercase;
-// $off-canvas-label-font-weight: $font-weight-bold;
-// $off-canvas-label-bg: #444;
+$off-canvas-label-padding: 0.3rem rem-calc(15) .5rem;
+$off-canvas-label-color: $bright;
+$off-canvas-label-text-transform: none;
+$off-canvas-label-font-weight: $font-weight-normal;
+$off-canvas-label-bg: $secondary-color;
 // $off-canvas-label-border-top: 1px solid scale-color(#444, $lightness: 14%);
 // $off-canvas-label-border-bottom: none;
-// $off-canvas-label-margin:0;
-// $off-canvas-link-padding: rem-calc(10, 15);
+$off-canvas-label-margin: rem-calc(10 0 0);
+$off-canvas-link-padding: rem-calc(10, 10);
 $off-canvas-link-color: $bright;
 $off-canvas-link-border-bottom: 1px solid $secondary-color;
 
