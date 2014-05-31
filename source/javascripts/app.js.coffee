@@ -63,7 +63,8 @@ $ ->
     plist
 
   printPlaylistTracks = (plist) ->
-    tracks_open    = "<div class='row'><div class='columns'><table id='tracktable'><thead><tr><th class='text-center' colspan='4'><a class='tracklist-playbutton playall button round' href='#'>play all</a></th></tr></thead><tbody>"
+    tracks_playall = "<a class='tracklist-playbutton playall button round' href='#' id='playall' data-pluri='" + plist.uri + "'>play all</a>"
+    tracks_open    = "<div class='row'><div class='columns'><table id='tracktable'><thead><tr><th class='text-center' colspan='4'>" + tracks_playall + "</th></tr></thead><tbody>"
     tracks_close   = "</tbody></table></div></div>"
     tracks_actions = "<a class='tracklist-playbutton button tiny round' href='#'></a><a class='tracklist-contextbutton button tiny round' href='#'></a>"
     tracks_rows    = ""
