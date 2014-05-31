@@ -25,10 +25,11 @@ $ ->
   setupPlaylists = (resultArr) ->
     return  if (not resultArr) or (resultArr is "")
 
-    child = undefined
-    tmp = ""
+    child        = undefined
+    label        = "<li><label>playlists</label></li>"
+    tmp          = ""
     starredRegex = /spotify:user:.*:starred/g
-    starred = undefined
+    starred      = undefined
     i = 0
 
     while i < resultArr.length
@@ -40,7 +41,7 @@ $ ->
         tmp += child
       i++
 
-    tmp = starred + tmp  if starred
+    tmp = label + starred + tmp  if starred
     # $("#playlistslist").empty()
     $("#playlistslist").html tmp
     return
@@ -49,7 +50,7 @@ $ ->
     mopidy.playlists.getPlaylists(false).then setupPlaylists, console.error
     return
 
-  setupPlaylistLinks = (link) ->
+  processPlaylistLinks = (link) ->
     mopidy.playlists.lookup($(link).attr('id'))
     .then (plist) -> printPlaylistInfo(plist, console.error)
     .then (plist) -> printPlaylistTracks(plist, console.error)
@@ -62,7 +63,7 @@ $ ->
     plist
 
   printPlaylistTracks = (plist) ->
-    tracks_open    = "<div class='row'><div class='columns'><table id='tracktable'><thead><tr><th colspan='3'>Tracks</th><th class='actions'><a class='tracklist-playbutton button tiny round' href='#'></a></th></tr></thead><tbody>"
+    tracks_open    = "<div class='row'><div class='columns'><table id='tracktable'><thead><tr><th class='text-center' colspan='4'><a class='tracklist-playbutton playall button round' href='#'>play all</a></th></tr></thead><tbody>"
     tracks_close   = "</tbody></table></div></div>"
     tracks_actions = "<a class='tracklist-playbutton button tiny round' href='#'></a><a class='tracklist-contextbutton button tiny round' href='#'></a>"
     tracks_rows    = ""
@@ -73,11 +74,6 @@ $ ->
       x++
 
     $("#playlist-tracks").html(tracks_open + tracks_rows + tracks_close)
-
-    # console.log plist.tracks[x] for x in [0..(plist.tracks.length-1)]
-                
-    # console.log plist.tracks.length # ok
-    # console.log plist.tracks[0] # ok
     plist
 
   # INIT
@@ -88,6 +84,6 @@ $ ->
     listPlaylists()
 
     $('#playlistslist').on 'click', 'a', ->
-      setupPlaylistLinks(this)
+      processPlaylistLinks(this)
 
     return

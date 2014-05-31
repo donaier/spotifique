@@ -34,6 +34,7 @@
           %li= link_to 'stuff', '#'
 
     %article.main-section
+      #landing
       #playlist-info
       #playlist-tracks
 
@@ -51,8 +52,8 @@
       /       %table#tracktable
       /         %thead
       /           %tr
-      /             %th{ colspan: 3 } Tracks
-      /             %th= link_to '', '#', class: 'tracklist-playbutton button tiny round'
+      /             %th.text-center{ colspan: 4 }
+      /               = link_to 'play all', '#', class: 'tracklist-playbutton playall button round'
       /         %tbody
       /           %tr
       /             %td 1.
@@ -61,7 +62,6 @@
       /             %td.actions
       /               = link_to '', '#', class: 'tracklist-playbutton button tiny round'
       /               = link_to '', '#', class: 'tracklist-contextbutton button tiny round'
-              
 
 
       / demo content
@@ -85,3 +85,6 @@
       /       %li some list entries
 
       %a.exit-off-canvas
+
+    %footer
+      cover? now playing
