@@ -21,6 +21,12 @@ $ ->
   stripUserId = (name) ->
     name.split(RegExp(" by "))[0]
 
+  getFirst = (list) ->
+    list[0]
+
+  extractTracks = (playlist) ->
+    playlist.tracks
+
   # PLAYLIST SETUP
   setupPlaylists = (resultArr) ->
     return  if (not resultArr) or (resultArr is "")
@@ -35,9 +41,9 @@ $ ->
     while i < resultArr.length
       # Check if this is Spotify's "Starred" playlist
       if starredRegex.test(resultArr[i].uri)
-        starred = "<li><a href=\"#\" id=\"" + resultArr[i].uri + "\"\">&#9733; Starred Tracks</a></li>"
+        starred = "<li><a href=\"#\" data-pluri=\"" + resultArr[i].uri + "\"\">&#9733; Starred Tracks</a></li>"
       else
-        child = "<li><a href=\"#\" id=\"" + resultArr[i].uri + "\"\">" + stripUserId(resultArr[i].name) + "</a></li>"
+        child = "<li><a href=\"#\" data-pluri=\"" + resultArr[i].uri + "\"\">" + stripUserId(resultArr[i].name) + "</a></li>"
         tmp += child
       i++
 
@@ -51,7 +57,7 @@ $ ->
     return
 
   processPlaylistLinks = (link) ->
-    mopidy.playlists.lookup($(link).attr('id'))
+    mopidy.playlists.lookup($(link).attr('data-pluri'))
     .then (plist) -> printPlaylistInfo(plist, console.error)
     .then (plist) -> printPlaylistTracks(plist, console.error)
 
@@ -86,5 +92,27 @@ $ ->
 
     $('#playlistslist').on 'click', 'a', ->
       processPlaylistLinks(this)
+
+    $('#playlist-tracks').on 'click', '#playall', ->
+      mopidy.playlists.lookup($(this).attr('data-pluri'))
+      .then(extractTracks, consoleError)
+      .then(mopidy.tracklist.add, consoleError)
+      .then(getFirst, consoleError)
+      .then(mopidy.playback.play, consoleError)
+
+    $('footer').on 'click', '#stopit', ->
+      mopidy.playback.stop()
+
+    $('footer').on 'click', '#playit', ->
+      mopidy.playback.play()
+
+    $('footer').on 'click', '#shuffleit', ->
+      console.log 'todo'
+
+    $('footer').on 'click', '#next', ->
+      mopidy.playback.next()
+
+    $('footer').on 'click', '#prev', ->
+      mopidy.playback.previous()
 
     return

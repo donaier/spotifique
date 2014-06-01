@@ -1,6 +1,28 @@
 footer
   width: 100%
-  height: rem-calc(45)
+  height: rem-calc(40)
+  padding: rem-calc(5)
   background-color: $dark
   position: absolute
   bottom: 0
+
+  #playit, #stopit, #prev, #next
+    display: inline-block
+    margin: rem-calc(0 2)
+    border: 2px solid #DE0000
+    width: rem-calc(30)
+    height: rem-calc(30)
+    background-size: contain
+    background-repeat: no-repeat
+
+  #playit
+    background-image: image-url('icons/btn_play.png')
+
+  #stopit
+    background-image: image-url('icons/btn_stop.png')
+
+  #prev
+    background-image: image-url('icons/btn_prev.png')
+
+  #next
+    background-image: image-url('icons/btn_next.png')
