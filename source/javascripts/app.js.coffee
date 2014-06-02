@@ -1,10 +1,12 @@
+#= require vendor/modernizr
 #= require vendor/jquery
 #= require vendor/jquery.cookie
 #= require vendor/fastclick
-#= require vendor/modernizr
 #= require vendor/placeholder
 
-#= require foundation.min
+#= require vendor/foundation
+#= require vendor/foundation.slider
+#= require vendor/foundation.offcanvas
 
 #= require_tree .
 
@@ -114,5 +116,8 @@ $ ->
 
     $('footer').on 'click', '#prev', ->
       mopidy.playback.previous()
+
+    $("[data-slider]").on "change", ->
+      mopidy.playback.setVolume(parseInt($(this).attr('data-slider')))
 
     return

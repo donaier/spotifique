@@ -1,6 +1,6 @@
 footer
   width: 100%
-  height: rem-calc(40)
+  height: auto
   padding: rem-calc(5)
   background-color: $dark
   position: absolute
@@ -9,7 +9,7 @@ footer
   #playit, #stopit, #prev, #next
     display: inline-block
     margin: rem-calc(0 2)
-    border: 2px solid #DE0000
+    border: 2px solid $primary-color
     width: rem-calc(30)
     height: rem-calc(30)
     background-size: contain
@@ -26,3 +26,6 @@ footer
 
   #next
     background-image: image-url('icons/btn_next.png')
+
+  .range-slider
+    margin: rem-calc(18 0)

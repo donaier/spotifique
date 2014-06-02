@@ -17,7 +17,8 @@
 // We use these as default colors throughout
 $bright: #DEDEDE;
 $dark: #151515;
-$primary-color: #DE0000;
+$primary-color: rgb(166,34,16);
+// $primary-color: #DE0000;
 $secondary-color: #411;
 // $success-color: $primary-color;
 // $alert-color: #f04124;
@@ -1261,18 +1262,18 @@ $include-html-visibility-classes: true;
 // RANGE SLIDER
 //
 
-// $include-html-range-slider-classes: $include-html-classes;
+$include-html-range-slider-classes: true;
 
 // These variabels define the slider bar styles
-// $range-slider-bar-width: 100%;
-// $range-slider-bar-height: rem-calc(16);
+$range-slider-bar-width: 100%;
+$range-slider-bar-height: rem-calc(15);
 
-// $range-slider-bar-border-width: 1px;
+$range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
-// $range-slider-bar-border-color: #ddd;
+$range-slider-bar-border-color: black;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
-// $range-slider-bar-bg-color: #fafafa;
+$range-slider-bar-bg-color: $primary-color;
 
 // Vertical bar styles
 // $range-slider-vertical-bar-width: rem-calc(16);
@@ -1282,10 +1283,10 @@ $include-html-visibility-classes: true;
 // $range-slider-handle-width: rem-calc(32);
 // $range-slider-handle-height: rem-calc(22);
 // $range-slider-handle-position-top: rem-calc(-5);
-// $range-slider-handle-bg-color: $primary-color;
+$range-slider-handle-bg-color: $primary-color;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
-// $range-slider-handle-border-color: none;
+$range-slider-handle-border-color: black;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
