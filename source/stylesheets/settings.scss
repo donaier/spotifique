@@ -17,7 +17,7 @@
 // We use these as default colors throughout
 $bright: #DEDEDE;
 $dark: #151515;
-$primary-color: rgb(166,34,16);
+$primary-color: rgb(126,26,12);
 // $primary-color: #DE0000;
 $secondary-color: #411;
 // $success-color: $primary-color;
@@ -683,7 +683,7 @@ $tabbar-color: $body-font-color;
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
 
 // Off Canvas Tab Bar Headers
-$tabbar-header-color: $body-font-color;
+$tabbar-header-color: $bright;
 // $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
@@ -706,7 +706,7 @@ $off-canvas-link-color: $bright;
 $off-canvas-link-border-bottom: 1px solid $secondary-color;
 
 // Off Canvas Menu Icon Variables
-$tabbar-menu-icon-color: $primary-color;
+$tabbar-menu-icon-color: $bright;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -1270,7 +1270,7 @@ $range-slider-bar-height: rem-calc(15);
 
 $range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
-$range-slider-bar-border-color: black;
+$range-slider-bar-border-color: $bright;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
 $range-slider-bar-bg-color: $primary-color;
@@ -1286,7 +1286,7 @@ $range-slider-bar-bg-color: $primary-color;
 $range-slider-handle-bg-color: $primary-color;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
-$range-slider-handle-border-color: black;
+$range-slider-handle-border-color: $bright;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
