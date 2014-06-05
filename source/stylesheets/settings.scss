@@ -356,7 +356,7 @@ $button-font-tny: rem-calc(14);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-$button-function-factor: -80%;
+$button-function-factor: -40%;
 
 // We use these to control button border styles.
 // $button-border-width: 0px;
@@ -1270,7 +1270,7 @@ $range-slider-bar-height: rem-calc(15);
 
 $range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
-$range-slider-bar-border-color: $primary-color;
+$range-slider-bar-border-color: $bright;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
 $range-slider-bar-bg-color: $dark;
@@ -1283,10 +1283,10 @@ $range-slider-bar-bg-color: $dark;
 // $range-slider-handle-width: rem-calc(32);
 // $range-slider-handle-height: rem-calc(22);
 // $range-slider-handle-position-top: rem-calc(-5);
-$range-slider-handle-bg-color: $secondary-color;
+$range-slider-handle-bg-color: $primary-color;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
-$range-slider-handle-border-color: $primary-color;
+$range-slider-handle-border-color: $bright;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);

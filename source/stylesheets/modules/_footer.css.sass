@@ -1,12 +1,12 @@
 footer
   // border-top: 1px solid $alert-color
-  overflow: hidden
   width: 100%
-  height: rem-calc(40)
   padding: rem-calc(5)
   background-color: $dark
   position: absolute
   bottom: 0
+  overflow: hidden
+  height: rem-calc(40)
 
 #playit, #stopit, #prev, #next, #scroll-controls
   display: inline-block
@@ -32,7 +32,7 @@ footer
 #scroll-controls
   +transition(-webkit-transform, 0.4s, ease-out)
   +transition(transform, 0.4s, ease-out)
-  background-image: image-url('icons/btn_up_w.png')
+  background-image: image-url('icons/btn_updown_w.png')
 
   .shifted &
     +transform(rotate(-180deg))
