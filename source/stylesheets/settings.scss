@@ -18,7 +18,7 @@
 $bright: #DEDEDE;
 $dark: #151515;
 $primary-color: rgb(126,26,12);
-// $primary-color: #DE0000;
+$alert-color: #DE0000;
 $secondary-color: #411;
 // $success-color: $primary-color;
 // $alert-color: #f04124;
@@ -68,7 +68,7 @@ $body-font-weight: $font-weight-normal;
 // $default-float: left;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 100%;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.e
@@ -356,7 +356,7 @@ $button-font-tny: rem-calc(14);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -80%;
 
 // We use these to control button border styles.
 // $button-border-width: 0px;
@@ -1270,10 +1270,10 @@ $range-slider-bar-height: rem-calc(15);
 
 $range-slider-bar-border-width: 1px;
 // $range-slider-bar-border-style: solid;
-$range-slider-bar-border-color: $bright;
+$range-slider-bar-border-color: $primary-color;
 // $range-slider-radius: $global-radius;
 // $range-slider-round: $global-rounded;
-$range-slider-bar-bg-color: $primary-color;
+$range-slider-bar-bg-color: $dark;
 
 // Vertical bar styles
 // $range-slider-vertical-bar-width: rem-calc(16);
@@ -1283,10 +1283,10 @@ $range-slider-bar-bg-color: $primary-color;
 // $range-slider-handle-width: rem-calc(32);
 // $range-slider-handle-height: rem-calc(22);
 // $range-slider-handle-position-top: rem-calc(-5);
-$range-slider-handle-bg-color: $primary-color;
+$range-slider-handle-bg-color: $secondary-color;
 // $range-slider-handle-border-width: 1px;
 // $range-slider-handle-border-style: solid;
-$range-slider-handle-border-color: $bright;
+$range-slider-handle-border-color: $primary-color;
 // $range-slider-handle-radius: $global-radius;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);

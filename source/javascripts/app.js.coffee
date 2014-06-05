@@ -11,7 +11,14 @@
 #= require_tree .
 
 $ ->
+  # UI STUFF
+
   $(document).foundation()
+
+  $('footer').on 'click', '#scroll-controls', ->
+    $('footer').toggleClass('shifted')
+
+  # MOPIDY + MUSIC STUFF
 
   consoleError = console.error.bind(console)
 

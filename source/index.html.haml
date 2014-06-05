@@ -42,14 +42,21 @@
 
     %footer
       .row
-        .columns.text-center
-          = link_to '', '#', id: 'prev', class: 'button tiny round'
-          = link_to '', '#', id: 'playit', class: 'button tiny round'
-          = link_to '', '#', id: 'stopit', class: 'button tiny round'
-          = link_to '', '#', id: 'next', class: 'button tiny round'
-      .row
-        .columns
-          .range-slider{ 'data-slider' => true, 'data-options' => 'step: 10;' }
-            %span.range-slider-handle
-            %span.range-slider-active-segment
-            %input{ type: 'hidden' }
+        .columns.small-10
+          .footer-window
+            .row
+              .columns.text-center
+                = link_to '', '#', id: 'prev', class: 'button tiny round'
+                = link_to '', '#', id: 'playit', class: 'button tiny round'
+                = link_to '', '#', id: 'stopit', class: 'button tiny round'
+                = link_to '', '#', id: 'next', class: 'button tiny round'
+
+            .row
+              .columns
+                .range-slider{ 'data-slider' => true, 'data-options' => 'step: 10;' }
+                  %span.range-slider-handle
+                  %span.range-slider-active-segment
+                  %input{ type: 'hidden' }
+
+        .columns.small-2.text-center
+          = link_to '', '#', id: 'scroll-controls', class: 'button tiny round'

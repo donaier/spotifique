@@ -1,32 +1,47 @@
 footer
-  border-top: 1px solid $primary-color
+  // border-top: 1px solid $alert-color
+  overflow: hidden
   width: 100%
-  height: auto
-  padding: rem-calc(10 5 5)
+  height: rem-calc(40)
+  padding: rem-calc(5)
   background-color: $dark
   position: absolute
   bottom: 0
 
-  #playit, #stopit, #prev, #next
-    display: inline-block
-    margin: rem-calc(0 2)
-    border: 2px solid $primary-color
-    width: rem-calc(30)
-    height: rem-calc(30)
-    background-size: contain
-    background-repeat: no-repeat
+#playit, #stopit, #prev, #next, #scroll-controls
+  display: inline-block
+  margin: rem-calc(0 2)
+  border: 2px solid $primary-color
+  width: rem-calc(30)
+  height: rem-calc(30)
+  background-size: contain
+  background-repeat: no-repeat
 
-  #playit
-    background-image: image-url('icons/btn_play_w.png')
+#playit
+  background-image: image-url('icons/btn_play_w.png')
 
-  #stopit
-    background-image: image-url('icons/btn_stop_w.png')
+#stopit
+  background-image: image-url('icons/btn_stop_w.png')
 
-  #prev
-    background-image: image-url('icons/btn_prev_w.png')
+#prev
+  background-image: image-url('icons/btn_prev_w.png')
 
-  #next
-    background-image: image-url('icons/btn_next_w.png')
+#next
+  background-image: image-url('icons/btn_next_w.png')
 
-  .range-slider
-    margin: rem-calc(18 0)
+#scroll-controls
+  +transition(-webkit-transform, 0.4s, ease-out)
+  +transition(transform, 0.4s, ease-out)
+  background-image: image-url('icons/btn_up_w.png')
+
+  .shifted &
+    +transform(rotate(-180deg))
+
+
+.footer-window
+  +transition(top, 0.4s, ease-out)
+  position: relative
+  top: 0
+
+  .shifted &
+    top: rem-calc(-43)
