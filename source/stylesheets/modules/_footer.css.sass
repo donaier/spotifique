@@ -65,9 +65,10 @@ footer
   background-color: $dark
   position: absolute
   bottom: rem-calc(42)
+  +transition(bottom, 0.4s, ease-out)
 
-  img
-    height: rem-calc(40)
+  &.out-of-view
+    bottom: 0
 
   p
     display: inline
