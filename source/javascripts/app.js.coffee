@@ -96,6 +96,15 @@ $ ->
   mopidy = new Mopidy() # Connect to server
   mopidy.on console.log.bind(console) # Log all events
 
+  mopidy.on 'event:trackPlaybackStarted', (track) ->
+    track_name =  track.tl_track.track.name
+    artist_name = track.tl_track.track.artists[0].name
+    $('.now-playing').html("<div class='row'><div class='columns'><p>" + track_name + " - " + artist_name + "</p></div></div>")
+    $('.now-playing').removeClass('out-of-view')
+
+  mopidy.on 'event:trackPlaybackEnded', ->
+    $('.now-playing').addClass('out-of-view')
+
   mopidy.on "state:online", ->
     listPlaylists()
 
