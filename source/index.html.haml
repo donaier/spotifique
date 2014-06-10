@@ -43,11 +43,10 @@
     %section.now-playing
       .row
         .columns
-          = image_tag 'placeholder_square.png'
           %p Dark Horse - Katy Perry
     %footer
       .row.slidin-content
-        .columns.small-11
+        .columns
           .footer-window
             .row
               .columns.text-center
@@ -63,5 +62,8 @@
                   %span.range-slider-active-segment
                   %input{ type: 'hidden' }
 
-        .columns.small-1.text-center
-          = link_to '', '#', id: 'scroll-controls', class: 'button tiny round'
+      .overlay.scroll
+        = link_to '', '#', id: 'scroll-controls', class: 'button tiny round'
+
+      .overlay.album
+        = image_tag 'placeholder_square.png'

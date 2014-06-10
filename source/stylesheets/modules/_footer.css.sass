@@ -8,6 +8,19 @@ footer
   overflow: hidden
   height: rem-calc(40)
 
+  .overlay
+    height: rem-calc(30)
+    width: rem-calc(30)
+    position: absolute
+    top: rem-calc(5)
+
+  .scroll
+    right: rem-calc(3)
+
+  .album
+    left: rem-calc(3)
+
+
 #playit, #stopit, #prev, #next, #scroll-controls
   display: inline-block
   margin: rem-calc(0 2)
@@ -36,6 +49,8 @@ footer
   .shifted &
     +transform(rotate(180deg))
 
+.slidin-content
+  padding: rem-calc(0 30)
 
 .footer-window
   +transition(top, 0.4s, ease-out)
@@ -44,3 +59,19 @@ footer
 
   .shifted &
     top: rem-calc(-43)
+
+.now-playing
+  padding-right: rem-calc(10)
+  background-color: $dark
+  position: absolute
+  bottom: rem-calc(42)
+
+  img
+    height: rem-calc(40)
+
+  p
+    display: inline
+    padding-left: rem-calc(10)
+
+  .columns
+    padding: 0
